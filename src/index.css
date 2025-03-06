@@ -16,3 +16,9 @@
     @apply font-nunito-sans;
   }
 }
+
+@layer components {
+  .wrapper {
+    @apply max-w-[1280px] px-6 mx-auto;
+  }
+}
