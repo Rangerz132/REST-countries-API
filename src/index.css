@@ -8,12 +8,12 @@
   --color-very-dark-blue-1: hsl(207, 26%, 17%);
   --color-very-dark-blue-2: hsl(200, 15%, 8%);
   --color-dark-gray: hsl(0, 0%, 52%);
-  --color-very-light-gray: hsl(0, 0%, 52%);
+  --color-very-light-gray: hsl(0, 0%, 98%);
 }
 
 @layer base {
   body {
-    @apply font-nunito-sans;
+    @apply font-nunito-sans bg-very-light-gray;
   }
 }
 

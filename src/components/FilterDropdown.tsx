@@ -3,7 +3,7 @@ const FilterDropdown = () => {
   return (
     <div className="w-[60%] relative">
       {/** Select input */}
-      <select className="p-4 w-full appearance-none shadow-md rounded-md outline-very-dark-blue-2">
+      <select className="p-4 w-full appearance-none shadow-md rounded-md outline-very-dark-blue-2 bg-white">
         <option>Filter by Region</option>
         <option>Africa</option>
         <option>America</option>
