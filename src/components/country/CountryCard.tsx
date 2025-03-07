@@ -9,7 +9,9 @@ const CountryCard = (props: { data: Country }) => {
       </div>
       <div className="bg-white p-6 flex flex-col space-y-6 w-full">
         {/** Name */}
-        <h1 className="font-bold text-2xl">{props.data.name}</h1>
+        <h1 className="font-bold text-2xl text-ellipsis line-clamp-1">
+          {props.data.name}
+        </h1>
         <div className="flex flex-col space-y-2">
           {/** Population */}
           <div className="flex flex-row space-x-1">

@@ -3,11 +3,14 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import Home from "./Home";
 import { ThemeContextProvider } from "./contexts/ThemeContext";
+import { CountryFilterContextProvider } from "./contexts/CountryFilterContext";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeContextProvider>
-      <Home />
+      <CountryFilterContextProvider>
+        <Home />
+      </CountryFilterContextProvider>
     </ThemeContextProvider>
   </StrictMode>
 );
