@@ -32,7 +32,9 @@ function Home() {
     }
 
     return countries.filter((country) =>
-      country.name.includes(countryFilter.search as string)
+      country.name
+        .toLowerCase()
+        .includes(countryFilter.search?.toLowerCase() as string)
     );
   }
 
