@@ -5,6 +5,7 @@ const ThemeToggle = () => {
   const { theme, setTheme } = useThemeContext(ThemeContext);
 
   const toggleTheme = () => {
+    document.body.classList.toggle("dark");
     setTheme((prevState) => (prevState === "Light" ? "Dark" : "Light"));
   };
 
@@ -15,13 +16,13 @@ const ThemeToggle = () => {
     >
       {/** Theme icon */}
       {theme === "Light" ? (
-        <TbMoon className="text-very-dark-blue-2" />
+        <TbMoon className="text-very-dark-blue-2 dark:text-white" />
       ) : (
-        <TbSun className="text-very-dark-blue-2" />
+        <TbSun className="text-very-dark-blue-2 dark:text-white" />
       )}
 
       {/** Theme name */}
-      <span className="capitalize text-very-dark-blue-2 text-sm font-semibold">
+      <span className="capitalize text-very-dark-blue-2 text-sm font-semibold dark:text-white">
         {theme === "Light" ? "Dark mode" : " Light mode"}
       </span>
     </div>

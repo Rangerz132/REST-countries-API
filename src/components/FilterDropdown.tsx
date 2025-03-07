@@ -17,7 +17,7 @@ const FilterDropdown = () => {
     <div className="w-[60%] relative">
       {/** Select input */}
       <select
-        className="p-4 w-full appearance-none shadow-md rounded-md outline-very-dark-blue-2 bg-white"
+        className="p-4 w-full appearance-none shadow-md rounded-md outline-very-dark-blue-2 bg-white dark:bg-dark-blue cursor-pointer"
         onChange={(e) =>
           handleOptionClick(
             e.target.value ? (e.target.value as Region) : undefined

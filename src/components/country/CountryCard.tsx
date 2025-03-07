@@ -2,12 +2,12 @@ import { Country } from "../../types";
 
 const CountryCard = (props: { data: Country }) => {
   return (
-    <div className="flex flex-col items-center justify-center overflow-hidden rounded-md shadow-md cursor-pointer">
+    <div className="flex flex-col items-center justify-center overflow-hidden rounded-md shadow-md cursor-pointer hover:scale-105 transition-transform duration-200">
       {/** Flag */}
       <div className="w-full h-40">
         <img src={props.data.flag} className="w-full h-full object-cover" />
       </div>
-      <div className="bg-white p-6 flex flex-col space-y-6 w-full">
+      <div className="bg-white p-6 flex flex-col space-y-6 w-full dark:bg-dark-blue ">
         {/** Name */}
         <h1 className="font-bold text-2xl text-ellipsis line-clamp-1">
           {props.data.name}
