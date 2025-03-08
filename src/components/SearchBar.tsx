@@ -8,7 +8,7 @@ const SearchBar = () => {
     useCountryFilterContext(CountryFilterContext);
 
   function handleInputChange(e: string) {
-    setCountryFilter({ ...countryFilter, search: e });
+    setCountryFilter({ ...countryFilter, search: e === "" ? undefined : e });
   }
 
   return (

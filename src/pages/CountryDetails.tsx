@@ -33,7 +33,7 @@ const CountryDetails = () => {
     <div className="py-12">
       {country && (
         <div className="wrapper flex flex-col space-y-10 md:flex-row md:items-center md:space-x-12">
-          <div className="space-y-10">
+          <div className="space-y-10 md:basis-1/2">
             <Link
               to="/"
               className="rounded-md shadow flex flex-row bg-white dark:bg-dark-blue max-w-30 px-6 py-1 space-x-1 cursor-pointer"
@@ -47,11 +47,11 @@ const CountryDetails = () => {
             </div>
           </div>
 
-          <div className="flex flex-col space-y-12">
+          <div className="flex flex-col space-y-12  md:basis-1/2">
             <h1 className="font-bold text-2xl hidden md:flex">
               {country.name}
             </h1>
-            <div className="flex flex-col space-y-12 md:flex-row md:space-y-0 md:space-x-12">
+            <div className="flex flex-col space-y-12 md:flex-row md:space-y-0 md:space-x-12 md:justify-between">
               {/** First info section */}
               <div className="flex flex-col space-y-6">
                 <h1 className="font-bold text-2xl md:hidden">{country.name}</h1>

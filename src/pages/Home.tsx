@@ -62,11 +62,11 @@ function Home() {
     );
 
     setFilteredCountries(commonCountries);
+    setVisibleCountryCount(12);
   }, [countryFilter]);
 
   useEffect(() => {
     if (isBottom) {
-      console.log("strange");
       setVisibleCountryCount((prevState) => (prevState += 12));
     }
   }, [isBottom]);

@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { Country } from "../../types";
 import CountryInfo from "./CountryInfo";
+import Skeleton from "react-loading-skeleton";
 
 const CountryCard = (props: { data: Country }) => {
   return (
@@ -15,7 +16,7 @@ const CountryCard = (props: { data: Country }) => {
       <div className="bg-white p-6 flex flex-col space-y-6 w-full dark:bg-dark-blue ">
         {/** Name */}
         <h1 className="font-bold text-2xl text-ellipsis line-clamp-1">
-          {props.data.name}
+          {props.data.name || <Skeleton />}
         </h1>
         {/** Info */}
         <div className="flex flex-col space-y-2">
