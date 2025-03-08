@@ -5,14 +5,17 @@ import {
   useCountryFilterContext,
 } from "../contexts/CountryFilterContext";
 import { CountriesAPI } from "../api/CountriesAPI";
-import Header from "../components/Header";
 import FilterSection from "../components/FilterSection";
 import CountryList from "../components/country/CountryList";
+import useScrollPosition from "../hooks/useScrollPosition";
 
 function Home() {
+  const [visibleCountryCount, setVisibleCountryCount] = useState(12);
   const [countries, setCountries] = useState<Country[]>([]);
   const [filterdCountries, setFilteredCountries] = useState<Country[]>([]);
   const { countryFilter } = useCountryFilterContext(CountryFilterContext);
+
+  const { isBottom } = useScrollPosition();
 
   function filterCountriesByRegion() {
     const newFilteredCountries = countries.filter(
@@ -61,11 +64,22 @@ function Home() {
     setFilteredCountries(commonCountries);
   }, [countryFilter]);
 
+  useEffect(() => {
+    if (isBottom) {
+      console.log("strange");
+      setVisibleCountryCount((prevState) => (prevState += 12));
+    }
+  }, [isBottom]);
+
   return (
     <div className="w-full wrapper flex flex-col space-y-12 py-12">
       <FilterSection />
 
-      {countries.length != 0 && <CountryList countries={filterdCountries} />}
+      {countries.length != 0 && (
+        <CountryList
+          countries={filterdCountries.slice(0, visibleCountryCount)}
+        />
+      )}
     </div>
   );
 }
