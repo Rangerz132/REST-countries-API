@@ -7,4 +7,9 @@ export class CountriesAPI {
   static async getCountries(): Promise<Country[]> {
     return (await axios.get<Country[]>(BASE_URL)).data;
   }
+
+  static async getCountryByName(name: string): Promise<Country> {
+    const countries = (await axios.get<Country[]>(BASE_URL)).data;
+    return countries.find((country) => country.name === name) as Country;
+  }
 }

@@ -1,20 +1,18 @@
-import Header from "./components/Header";
-import FilterSection from "./components/FilterSection";
 import { useEffect, useState } from "react";
-import { CountriesAPI } from "./api/CountriesAPI";
-import { Country } from "./types";
-
-import CountryList from "./components/country/CountryList";
+import { Country } from "../types";
 import {
   CountryFilterContext,
   useCountryFilterContext,
-} from "./contexts/CountryFilterContext";
+} from "../contexts/CountryFilterContext";
+import { CountriesAPI } from "../api/CountriesAPI";
+import Header from "../components/Header";
+import FilterSection from "../components/FilterSection";
+import CountryList from "../components/country/CountryList";
 
 function Home() {
   const [countries, setCountries] = useState<Country[]>([]);
   const [filterdCountries, setFilteredCountries] = useState<Country[]>([]);
-  const { countryFilter, setCountryFilter } =
-    useCountryFilterContext(CountryFilterContext);
+  const { countryFilter } = useCountryFilterContext(CountryFilterContext);
 
   function filterCountriesByRegion() {
     const newFilteredCountries = countries.filter(
@@ -64,13 +62,10 @@ function Home() {
   }, [countryFilter]);
 
   return (
-    <div className="flex flex-col ">
-      <Header />
-      <div className="w-full wrapper flex flex-col space-y-12 py-12">
-        <FilterSection />
+    <div className="w-full wrapper flex flex-col space-y-12 py-12">
+      <FilterSection />
 
-        {countries.length != 0 && <CountryList countries={filterdCountries} />}
-      </div>
+      {countries.length != 0 && <CountryList countries={filterdCountries} />}
     </div>
   );
 }
