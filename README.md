@@ -4,7 +4,7 @@
 
 The REST Countries App is a modern, interactive application built with React that allows users to explore and search for country information. It features dynamic filtering capabilities for searching by country name and continent, offering a smooth and responsive user experience. The app uses React, React-Router, JSON-Server, and Tailwind CSS to ensure a clean, efficient UI and seamless state management.
 
-[text](https://rest-countries-api-two-mocha.vercel.app/)
+[Check out the app here](https://rest-countries-api-two-mocha.vercel.app/)
 
 ## Getting started
 
@@ -37,6 +37,8 @@ npm run dev
 - Mock API: Simulated backend for retrieving country data, mimicking real API calls.
 
 - Optimize Search and Loading: Provides fast, responsive search functionality with asynchronous data fetching and loading states.
+
+- Dark mode: Toggle between light and dark modes for better user customization and accessibility.
 
 ## Media
 
