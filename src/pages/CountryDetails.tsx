@@ -18,15 +18,13 @@ const CountryDetails = () => {
     fetchCountry();
   }, []);
 
-  function getComplexData(
-    country: Country,
-    key: string,
-    value: string
-  ): string {
-    if (!country![key]) {
+  function getComplexData(country: any, key: string, value: string): string {
+    const items = country[key] as Record<string, string>[];
+    if (!items) {
       return "None";
     }
-    return country![key].map((currentKey) => currentKey[value]).join(", ");
+
+    return items.map((currentKey) => currentKey[value]).join(", ");
   }
 
   return (

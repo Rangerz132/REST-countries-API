@@ -63,7 +63,7 @@ function Home() {
 
     setFilteredCountries(commonCountries);
     setVisibleCountryCount(12);
-  }, [countryFilter]);
+  }, []);
 
   useEffect(() => {
     if (isBottom) {
